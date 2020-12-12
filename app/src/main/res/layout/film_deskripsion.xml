@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/home_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <View
+            android:id="@+id/back_movie_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparentBack"
+            android:translationZ="8dp"/>
+
+        <ProgressBar
+            android:id="@+id/pb_movie_detail"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:translationZ="9dp"
+            android:layout_centerInParent="true"/>
+
+
+        <include
+            android:id="@+id/container_navbar_main"
+            layout="@layout/navbar_main"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swl_deskripsion"
+            android:layout_width="match_parent"
+            android:layout_below="@id/container_navbar_main"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/no_internet_img"
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:src="@drawable/ic_no_internet"
+                    android:layout_above="@id/tv_no_internet_title"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:contentDescription="@string/app_name"/>
+
+                <TextView
+                    android:id="@+id/tv_no_internet_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/something_went_wrong"
+                    android:textSize="21sp"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/tv_no_internet_subtitle"
+                    android:layout_below="@id/tv_no_internet_title"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/please_check_your_internet_connection"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="@color/white"
+                    android:layout_centerHorizontal="true"/>
+
+                <include
+                    android:id="@+id/container_deskripsion_main"
+                    layout="@layout/deskripsion_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginBottom="100dp"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <Button
+            android:id="@+id/btn_to_trailer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_primary"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="@string/see_trailer"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="@font/lato_black"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

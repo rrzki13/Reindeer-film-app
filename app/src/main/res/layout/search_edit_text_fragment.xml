@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/container_txt_field"
+        android:background="@color/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+        
+        <RelativeLayout
+            android:id="@+id/back_to_search"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+            
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/app_name" />
+            
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/et_search_movie"
+                android:imeOptions="actionSearch"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:minHeight="60dp"
+                android:background="@drawable/search"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:importantForAutofill="no"
+                tools:ignore="LabelFor" />
+
+        </RelativeLayout>
+        
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_search"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_centerInParent="true"
+        android:translationZ="8dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/search_result"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/container_txt_field"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:text="@string/search_result"
+        android:fontFamily="@font/lato_bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search_list"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_below="@id/search_result"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <ImageView
+        android:id="@+id/no_search_img"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:src="@drawable/ic_no_search"
+        android:layout_above="@id/tv_no_search_title"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/tv_no_search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movie_not_found"
+        android:textSize="21sp"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_no_search_subtitle"
+        android:layout_below="@id/tv_no_search_title"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/please_check_your_search"
+        android:textSize="18sp"
+        android:fontFamily="@font/lato_regular"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/search_img"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:src="@drawable/ic_search_3"
+        android:layout_above="@id/tv_search_title"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/tv_search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cari_film"
+        android:textSize="21sp"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_search_subtitle"
+        android:layout_below="@id/tv_search_title"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cari_film_favoritmu_disini"
+        android:textSize="18sp"
+        android:fontFamily="@font/lato_regular"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/no_internet_search_img"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_no_internet"
+        android:layout_above="@id/tv_no_internet_search_title"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/tv_no_internet_search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/something_went_wrong"
+        android:textSize="21sp"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_no_internet_search_subtitle"
+        android:layout_below="@id/tv_no_internet_search_title"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/please_check_your_internet_connection"
+        android:textSize="18sp"
+        android:fontFamily="@font/lato_regular"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

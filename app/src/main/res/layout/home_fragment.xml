@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/home_background"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <include
+            android:id="@+id/container_navbar_main_home"
+            layout="@layout/navbar_main"/>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/container_navbar_main_home"
+            android:layout_marginTop="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_upcoming"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upcoming_movies"
+                    android:textSize="19sp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/lato_black"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_home_upcoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_upcoming"
+                    android:paddingStart="15dp"
+                    android:layout_marginTop="14dp"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/txt_youMayLike"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rv_home_upcoming"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/you_may_like"
+                    android:textSize="19sp"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/lato_black"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_home_you_like"
+                    android:layout_width="match_parent"
+                    android:paddingStart="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_youMayLike"
+                    android:layout_marginBottom="?attr/actionBarSize"
+                    android:layout_marginTop="14dp"
+                    tools:ignore="RtlSymmetry" />
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</FrameLayout>
